@@ -1,0 +1,67 @@
+body {
+  font-family: sans-serif;
+  background: #f9f5f2;
+  margin: 0;
+  padding: 0;
+  color: #402000;
+}
+header {
+  background: #fff6e3;
+  text-align: center;
+  padding: 2em 1em 1em 1em;
+}
+h1 {
+  font-size: 2.2em;
+  color: #cf7e21;
+  margin: 0 0 0.4em 0;
+}
+section {
+  max-width: 800px;
+  margin: 2em auto;
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 2px 16px rgba(200,130,50,0.08);
+  padding: 2em;
+}
+h2 {
+  color: #cf7e21;
+  border-bottom: 2px solid #ffd9a0;
+  padding-bottom: 0.2em;
+  margin-bottom: 1em;
+}
+.work {
+  margin-bottom: 2em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.7em auto 1.2em auto;
+}
+ul {
+  padding-left: 1.2em;
+}
+a {
+  color: #cf7e21;
+  text-decoration: underline;
+}
+a:hover {
+  color: #402000;
+}
+
+.thumb-row {
+  display: flex;
+  gap: 1em;
+  justify-content: flex-start; /* 必要ならcenterにしてもOK */
+  margin: 1em 0;
+}
+.thumb-row img {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  background: #fff;
+  /* 画像サイズはstyle属性 or ここで指定してもOK */
+}
+
+
+
+
+
