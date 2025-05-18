@@ -1,0 +1,267 @@
+/* style.css */
+
+body {
+  font-family: 'Yu Gothic', 'Hiragino Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #faf9f6;
+  color: #333;
+  line-height: 1.7;
+}
+
+header#navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  transition: background 0.3s;
+}
+header#navbar h1 {
+  margin: 0.5em 0 0.2em;
+  font-size: 1.6em;
+  color: #9b582e;
+  letter-spacing: 0.05em;
+}
+header#navbar nav {
+  display: flex;
+  gap: 1.5em;
+  padding-bottom: 0.6em;
+}
+header#navbar nav a {
+  text-decoration: none;
+  color: #8b7456;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+header#navbar nav a:hover {
+  color: #c97a40;
+}
+
+#hero {
+  background: linear-gradient(120deg, #fff4e0 50%, #ffd6a1 100%);
+  text-align: center;
+  padding: 3em 1em 2.5em 1em;
+}
+#hero h2 {
+  font-size: 2.2em;
+  color: #d18033;
+  margin-bottom: 0.3em;
+}
+#hero p {
+  font-size: 1.15em;
+  color: #7a6142;
+}
+
+#gallery {
+  background: #fff;
+  padding: 2em 1em;
+  text-align: center;
+}
+#gallery h2 {
+  color: #ad712d;
+}
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+  justify-content: center;
+  margin-top: 1.2em;
+  scroll-snap-type: x mandatory;
+}
+
+.slider img {
+  width: 280px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 1.2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+  background: #fff7ed; /* 余白用に背景色つけておくとナチュラル */
+  scroll-snap-align: center;
+}
+
+#features {
+  background: #ffefdc;
+  padding: 2em 1em;
+  text-align: center;
+}
+#features h2 {
+  color: #c97a40;
+}
+.feature-box {
+  background: #fff;
+  display: inline-block;
+  margin: 1em 1.2em 0 0;
+  padding: 1em 1.7em;
+  border-radius: 2em;
+  box-shadow: 0 2px 8px rgba(200,130,50,0.05);
+  font-size: 1.1em;
+  color: #8b7456;
+  transition: transform 0.2s;
+}
+.feature-box:hover {
+  transform: scale(1.05);
+  background: #fff7ec;
+}
+
+#faq {
+  background: #fff;
+  padding: 2em 1em;
+  max-width: 520px;
+  margin: 0 auto;
+}
+#faq h2 {
+  color: #ad712d;
+  text-align: center;
+}
+.faq-item {
+  margin-bottom: 1.3em;
+}
+.question {
+  width: 100%;
+  background: #fff7ed;
+  border: none;
+  padding: 1em;
+  font-size: 1em;
+  color: #ab6e2c;
+  text-align: left;
+  border-radius: 1em;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.question:hover {
+  background: #ffe7ca;
+}
+.answer {
+  background: #fff2e0;
+  border-radius: 0.7em;
+  margin: 0.5em 0 0 0;
+  padding: 0.8em 1.1em;
+  display: none;
+  color: #7a6142;
+}
+
+#contact {
+  background: #ffefdc;
+  padding: 2em 1em 3em 1em;
+  text-align: center;
+}
+#contact h2 {
+  color: #ad712d;
+}
+#openModal {
+  background: #c97a40;
+  color: #fff;
+  border: none;
+  border-radius: 2em;
+  padding: 1em 2.5em;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(200,130,50,0.13);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#openModal:hover {
+  background: #b56721;
+}
+
+/* モーダル */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(80,40,15,0.12);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: #fffaf4;
+  padding: 2.2em 1.5em 1.5em 1.5em;
+  border-radius: 1.5em;
+  box-shadow: 0 2px 20px rgba(160,120,80,0.17);
+  max-width: 360px;
+  width: 85vw;
+  position: relative;
+  text-align: center;
+}
+.close {
+  position: absolute;
+  right: 1em;
+  top: 0.7em;
+  font-size: 2em;
+  color: #d18033;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close:hover {
+  color: #b56721;
+}
+
+@media (max-width: 600px) {
+  header#navbar h1 { font-size: 1.2em; }
+  #hero h2 { font-size: 1.3em; }
+  .slider img { width: 90vw; height: 140px; }
+  .feature-box { font-size: 0.97em; padding: 0.7em 1.2em; }
+  #contact { padding: 1.5em 0.7em 2.5em 0.7em; }
+}
+
+/* 講師紹介セクションのデザイン追加・調整 */
+#teacher {
+  background: #ffefdc;
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.teacher-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5em 0;
+}
+
+.teacher-profile img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1em;
+  margin-right: 0;
+  display: block;
+}
+
+.teacher-profile div {
+  text-align: center;
+}
+
+/* アニメーション初期値（追加分） */
+.feature-box,
+.slider img,
+.faq-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 1em;
+  justify-content: flex-start;
+  margin-top: 1.2em;
+  scroll-snap-type: x mandatory;
+  /* スマホ/小画面だと横スクロール前提 */
+  cursor: grab;
+}
+.slider.active {
+  cursor: grabbing;
+}
+
+
+
